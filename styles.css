@@ -38,12 +38,14 @@ h1 {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 .banner img {
   width: 20%;
   margin: 0;
   padding: 0;
   display: block;
+  height: auto;
 }
 @media (min-width: 600px) {
   h1 {
@@ -83,9 +85,9 @@ h1 {
     width: 128px;
     height: 128px;
   }
-}
-.face-wrapper {
-  margin: 30px;
+  .face-wrapper {
+    padding: 30px;
+  }
 }
 .highlight {
   background-color: #c4e9ff;

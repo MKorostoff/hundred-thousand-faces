@@ -16,8 +16,10 @@ function addRows() {
     }
 
     var face_wrapper = document.createElement('div');
-    face_wrapper.dataset.ordinalNumber = number;
     face_wrapper.classList = "face-wrapper";
+    if (number == 1) {
+      face_wrapper.id = 'first';
+    }
 
     var gender = (Math.random() < 0.382) ? 'female' : 'male';
     var inner = document.createElement('img');
@@ -31,16 +33,18 @@ function addRows() {
 addRows();
 
 window.addEventListener('scroll', function(e) {
-  if (number < total && main.offsetHeight - window.scrollY < 2000) {
+  if (number < total && main.offsetHeight - window.scrollY < 10000) {
     addRows();
   }
   counter.innerHTML = getScrollPercent().toLocaleString();
 });
 
 function getScrollPercent() {
+  var face_width = document.getElementById('first').clientWidth;
+  var face_height = document.getElementById('first').clientHeight;
   var body = document.documentElement || document.body;
-  var faces_per_row = Math.floor(main.clientWidth / 188);//todo: programatically get face width
-  var total_height = total / faces_per_row * 188;//todo: programatically get face height
+  var faces_per_row = Math.floor(main.clientWidth / face_width);
+  var total_height = total / faces_per_row * face_height;
   var scroll_percent = (body.scrollTop - main.offsetTop + body.clientHeight) / total_height;
   var count = Math.floor(scroll_percent * total);
 
