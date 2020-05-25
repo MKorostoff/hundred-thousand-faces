@@ -57,6 +57,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 30px;
 }
 .intro {
   margin: auto;
@@ -71,19 +72,19 @@ h1 {
     font-size: 24px;
   }
 }
-.outer,
-.outer img {
+.face-wrapper,
+.face-wrapper img {
   width: 100px;
   height: 100px;
 }
 @media (min-width: 600px) {
-  .outer,
-  .outer img {
+  .face-wrapper,
+  .face-wrapper img {
     width: 128px;
     height: 128px;
   }
 }
-.outer {
+.face-wrapper {
   margin: 30px;
 }
 .highlight {
@@ -94,4 +95,15 @@ h1 {
   font-size: 12px;
   color: #949494;
   margin-top: 2px;
+}
+.fixed {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background-color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 0;
+  box-shadow: 0 0px 10px #0000004a;
 }
