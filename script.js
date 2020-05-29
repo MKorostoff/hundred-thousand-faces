@@ -1,6 +1,7 @@
 var main = document.getElementById('main');
 var counter = document.getElementById('counter');
-var total = 98683;
+var counter_inner = document.getElementById('counter-inner');
+var total = 102241;
 var page = 0;
 var number = 0;
 var male_images = []
@@ -36,7 +37,7 @@ window.addEventListener('scroll', function(e) {
   if (number < total && main.offsetHeight - window.scrollY < 10000) {
     addRows();
   }
-  counter.innerHTML = getScrollPercent().toLocaleString();
+  counter_inner.innerHTML = getScrollPercent().toLocaleString() + ' ';
 });
 
 function getScrollPercent() {
@@ -48,14 +49,14 @@ function getScrollPercent() {
   var scroll_percent = (body.scrollTop - main.offsetTop + body.clientHeight) / total_height;
   var count = Math.floor(scroll_percent * total);
 
-  if (count > 0) {
+  var chunked_count = count - (count % faces_per_row);
+
+  if (chunked_count > 0) {
     counter.classList = "fixed";
   }
   else {
     counter.classList = "";
   }
-
-  var chunked_count = count - (count % faces_per_row);
   return (chunked_count > 0) ? chunked_count : 0;
 }
 
