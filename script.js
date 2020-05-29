@@ -22,9 +22,10 @@ function addRows() {
       face_wrapper.id = 'first';
     }
 
-    var gender = (Math.random() < 0.382) ? 'female' : 'male';
+    var gender = (Math.random() < 0.382) ? 'f' : 'm';
+    var age = (Math.random() < 0.0006) ? 'child' : 'adult';
     var inner = document.createElement('img');
-    inner.src = image(gender);
+    inner.src = (age === 'adult') ? image(gender) : child_image(gender);
 
     face_wrapper.appendChild(inner);
     main.appendChild(face_wrapper);
@@ -84,7 +85,7 @@ shuffle_male_images();
 shuffle_female_images();
 
 function image(gender) {
-  if (gender == 'male') {
+  if (gender == 'm') {
     if (!male_images.length) {
       shuffle_male_images();
     }
@@ -96,4 +97,23 @@ function image(gender) {
     }
     return female_images.pop();
   }
+}
+
+function child_image(gender) {
+  var propability = Math.random();
+  var race = '';
+
+  if (propability < .05) {
+    race = 'asian';
+  }
+  else if (propability < .162) {
+    race = 'latin';
+  }
+  else if (propability < .422) {
+    race = 'black';
+  }
+  else {
+    race = 'white';
+  }
+  return 'img/children/' + gender + '/' + race + '.jpg';
 }
