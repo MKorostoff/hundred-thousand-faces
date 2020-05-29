@@ -7,7 +7,6 @@ var number = 0;
 var male_images = []
 var female_images = [];
 
-
 function addRows() {
   for (var face = 0; face < 1000; face++) {
     number = (page * 1000) + face + 1;
