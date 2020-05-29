@@ -14,32 +14,6 @@ h2 + p {
   font-family: sans-serif;
   font-size: 60px;
 }
-.infobox {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 5px;
-  background-color: blue;
-  color: white;
-  box-sizing: border-box;
-  box-shadow: 2px 3px 6px black;
-}
-.info-describe {
-  font-size: 12px;
-}
-.info-number,
-.info-describe {
-  margin-bottom: auto;
-}
-.info-number {
-  font-weight: bold;
-  font-size: 20px;
-}
-@media (min-width: 600px) {
-  .info-number {
-    font-size: 24px;
-  }
-}
 .banner {
   text-align: center;
   margin: auto;
@@ -117,8 +91,6 @@ h2 + p {
   color: #949494;
   margin-top: 2px;
 }
-
-
 #counter {
   text-align: center;
   width: 100%;
