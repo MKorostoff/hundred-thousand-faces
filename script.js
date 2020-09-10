@@ -1,7 +1,7 @@
 var main = document.getElementById('main');
 var counter = document.getElementById('counter');
 var counter_inner = document.getElementById('counter-inner');
-var total = 113722;
+var total = 200000;
 var page = 0;
 var number = 0;
 var male_images = []
@@ -57,6 +57,13 @@ function getScrollPercent() {
   else {
     counter.classList = "";
   }
+
+  //Needed to account for rounding imprecision above, otherwise
+  //certain browsers may display 200,004 as the count
+  if (chunked_count > total) {
+    return total;
+  }
+
   return (chunked_count > 0) ? chunked_count : 0;
 }
 
