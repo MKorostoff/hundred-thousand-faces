@@ -110,3 +110,18 @@ h2 + p {
     font-size: 40px;
   }
 }
+@media (max-width: 599px) {
+  .banner img {
+    min-height: calc(100vw / 1.25);
+  }
+}
+@media (min-width: 600px) and (max-width: 1599px) {
+  .banner img {
+    min-height: calc(100vw / 5);
+  }
+}
+@media (min-width: 1600px) {
+  .banner img {
+    min-height: calc(100vw / 7.01);
+  }
+}
